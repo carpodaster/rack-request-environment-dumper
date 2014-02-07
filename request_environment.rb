@@ -1,8 +1,10 @@
 require 'sinatra'
 
 get '/' do
-  body = "<html><body><pre>"
-  body += request.env.to_yaml
-  body += "</pre></body></html>"
-  body
+  response  = "<!DOCTYPE html><html>"
+  response += "<head><meta charset='utf8'><title>Request details</title></head>"
+  response += "<body><pre>"
+  response += request.env.to_yaml
+  response += "</pre></body></html>"
+  response
 end
